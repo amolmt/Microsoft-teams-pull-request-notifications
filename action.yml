@@ -1,0 +1,17 @@
+name: 'Microsoft Teams Pull Request Notifications'
+description: 'Notifies a Microsoft Teams channel when a pull request is opened.'
+author: 'Amol Tangade <tangadeamol@outlook.com>'
+inputs:
+  teams_webhook_url:
+    description: 'The Microsoft Teams webhook URL.'
+    required: true
+  github_token:
+    description: 'GitHub token. Defaults to github.token'
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+branding:
+  icon: 'bell'
+  color: 'green'

@@ -1,0 +1,40 @@
+{
+  "name": "microsoft-teams-pull-request-notifications",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amolmt/Microsoft-teams-pull-request-notifications.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "microsoft",
+    "teams",
+    "pull request",
+    "notification"
+  ],
+  "author": "Amol Tangade <tangadeamol@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amolmt/Microsoft-teams-pull-request-notifications/issues"
+  },
+  "homepage": "https://github.com/amolmt/Microsoft-teams-pull-request-notifications#readme",
+  "description": "",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3",
+    "eslint": "^9.19.0",
+    "prettier": "^3.4.2"
+  }
+}

@@ -1,0 +1,15 @@
+name: Test Teams PR Notifications
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Teams PR Notifier
+        uses: ./.github/actions/teams-pull-request-notifier-action
+        with:
+          teams_webhook_url: ${{ secrets.TEAMS_WEBHOOK_URL }}
