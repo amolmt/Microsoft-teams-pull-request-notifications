@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 20
@@ -24,9 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            See the latest changes in the release notes.
+          tag_name: refs/tags/v1.0.0
+          release_name: Release refs/tags/v1.0.0
+          body: See the latest changes in the release notes.
           draft: false
           prerelease: false
